@@ -23,13 +23,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
       - name: build h5
         run: |
           npm install
           npm run build:h5
 
-      # Runs a set of commands using the runners shell
-      - name: copy files to doc
-        run: |
-          pwd
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: dist/build/h5 # The folder the action should deploy.
+          CLEAN: true 
