@@ -1,4 +1,4 @@
-# ts-uniapp
+# 财富自由计算器
 
 ## Project setup
 ```
