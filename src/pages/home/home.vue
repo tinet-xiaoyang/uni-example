@@ -41,10 +41,11 @@
   </view>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
   import Vue from 'vue';
-
+  var formatMoney = require('../../common/formatMoney.js');
   var graceChecker = require("../../common/graceChecker.js");
+
   export default Vue.extend({
     data() {
       return {
@@ -53,7 +54,6 @@
     },
     methods: {
       formSubmit(e: any) {
-        console.log('form发生了submit事件，携带数据为：' + JSON.stringify(e.detail.value))
         //定义表单规则
         var rule = [
           { name: "budget", checkType: "number", checkRule: "", errorMsg: "请输入预算" },
@@ -64,13 +64,14 @@
         if (checkRes) {
           const { budget, age, life, devaluation } = e.detail.value
           const years: Number = life - age
-          let total = budget * 12
-          const rate = 1 + devaluation/100
+          const yearBudget = budget * 12
+          let total = yearBudget
+          let rate = 1 + devaluation/100
           for(let i = 1; i < years; i++){
-            total = total * rate
+            total = yearBudget + total * rate
           }
-          console.log('age',age)
-          this.total = total
+          console.log('total',total)
+          this.total = formatMoney(total)
         } else {
           
           uni.showToast({ title: graceChecker.error, icon: "none" });
@@ -81,6 +82,7 @@
       }
     }
   })
+  
 </script>
 
 <style>
