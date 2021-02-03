@@ -14,8 +14,11 @@
     });
 </script>
 
-<style>
+<style lang='scss'>
     /*每个页面公共css */
+@import "uview-ui/index.scss";
 @import "./common/uni.css";
-
+page {
+	background-color: $u-bg-color;
+}
 </style>

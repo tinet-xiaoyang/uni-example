@@ -34,7 +34,9 @@
         </view>
         <text class="total">{{total}}￥</text>
         <view class="uni-btn-v">
-          <button form-type="submit">计算</button>
+          <u-button form-type="submit" :ripple="true" type="primary">
+            计算
+          </u-button>
         </view>
       </form>
     </view>
@@ -70,7 +72,7 @@
           for(let i = 1; i < years; i++){
             total = yearBudget + total * rate
           }
-          console.log('total',total)
+          console.log('total', total)
           this.total = formatMoney(total)
         } else {
           
