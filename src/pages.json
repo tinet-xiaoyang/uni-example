@@ -9,6 +9,12 @@
 			"style": {
 				"navigationBarTitleText": "财富自由计算器"
 			}
+		},
+		{
+			"path": "pages/calculator/calculator",
+			"style": {
+				"navigationBarTitleText": "财富自由计算器"
+			}
 		}
 	],
 	"globalStyle": {
@@ -16,5 +22,30 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#303133",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/icon/component.png",
+				"selectedIconPath": "static/icon/component_select.png",
+				"text": "计算器"
+			},
+			{
+				"pagePath": "pages/calculator/calculator",
+				"iconPath": "static/icon/js.png",
+				"selectedIconPath": "static/icon/js_select.png",
+				"text": "工具"
+			},
+			{
+				"pagePath": "pages/example/template",
+				"iconPath": "static/icon/template.png",
+				"selectedIconPath": "static/icon/template_select.png",
+				"text": "模板"
+			}
+		]
 	}
 }
