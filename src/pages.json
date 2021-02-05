@@ -15,6 +15,12 @@
 			"style": {
 				"navigationBarTitleText": "财富自由计算器"
 			}
+		},
+		{
+			"path": "pages/charts/charts",
+			"style": {
+				"navigationBarTitleText": "图表实例"
+			}
 		}
 	],
 	"globalStyle": {
@@ -41,10 +47,10 @@
 				"text": "工具"
 			},
 			{
-				"pagePath": "pages/example/template",
+				"pagePath": "pages/charts/charts",
 				"iconPath": "static/icon/template.png",
 				"selectedIconPath": "static/icon/template_select.png",
-				"text": "模板"
+				"text": "图表"
 			}
 		]
 	}
