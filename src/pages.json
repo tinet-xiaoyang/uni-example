@@ -11,9 +11,9 @@
 			}
 		},
 		{
-			"path": "pages/calculator/calculator",
+			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "财富自由计算器"
+				"navigationBarTitleText": "演示列表"
 			}
 		},
 		{
@@ -21,6 +21,16 @@
 			"style": {
 				"navigationBarTitleText": "图表实例"
 			}
+		},
+		{
+			"path": "pages/calculator/calculator",
+			"style": {
+				"navigationBarTitleText": "uniCloud演示"
+			}
+		},
+		{
+			"path": "pages/password/password",
+			"style": {}
 		}
 	],
 	"globalStyle": {
@@ -41,10 +51,10 @@
 				"text": "计算器"
 			},
 			{
-				"pagePath": "pages/calculator/calculator",
+				"pagePath": "pages/index/index",
 				"iconPath": "static/icon/js.png",
 				"selectedIconPath": "static/icon/js_select.png",
-				"text": "工具"
+				"text": "演示列表"
 			},
 			{
 				"pagePath": "pages/charts/charts",
