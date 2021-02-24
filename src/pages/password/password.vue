@@ -13,6 +13,7 @@
 		<button type="default" @tap="login">登录</button>
 		<button type="default" @tap="updatePwd">修改密码</button>
 		<button type="default" @tap="resetPwd">重设密码</button>
+		<button type="default" @tap="checkLoginUser">查看登录用户</button>
 	</view>
 </template>
 
@@ -28,6 +29,29 @@
 		methods: {
 			permissionChange(e) {
 				this.needPermission = e.detail.value.indexOf('needPermission') > -1
+			},
+			checkLoginUser() {
+				uniCloud.callFunction({
+					name: 'user-center',
+					data: {
+						action: 'getUserInfo',
+					},
+					success(res) {
+						uni.showModal({
+							showCancel: false,
+							content: JSON.stringify(res.result)
+						})
+						// uni.setStorageSync('uni_id_token', res.result.token)
+						// uni.setStorageSync('uni_id_token_expired', res.result.tokenExpired)
+					},
+					fail(e) {
+						console.error(e)
+						uni.showModal({
+							showCancel: false,
+							content: '获取失败，请稍后再试'
+						})
+					}
+				})
 			},
 			register() {
 				uniCloud.callFunction({

@@ -10,7 +10,7 @@ exports.main = async (event) => {
 	let params = event.params || {}
 	let payload = {}
 	let noCheckAction = ['register', 'checkToken', 'encryptPwd', 'login', 'loginByWeixin', 'sendSmsCode',
-		'setVerifyCode', 'loginBySms', 'loginByEmail', 'code2SessionWeixin', 'code2SessionAlipay'
+		'setVerifyCode', 'loginBySms', 'loginByEmail', 'code2SessionWeixin', 'code2SessionAlipay', 'getUserInfo'
 	]
 	if (noCheckAction.indexOf(event.action) === -1) {
 		if (!event.uniIdToken) {
@@ -304,6 +304,21 @@ exports.main = async (event) => {
 					uid,
 					nickname
 				});
+				break;
+			}
+		case 'getUserInfo':
+			{
+				payload = await uniID.checkToken(event.uniIdToken)
+				if (payload.code) {
+					return payload
+				}else{
+					const {
+						uid
+					} = payload
+					res = await uniID.getUserInfo({
+						uid,
+					});
+				}
 				break;
 			}
 		case 'setUserInviteCode':
