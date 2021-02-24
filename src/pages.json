@@ -31,6 +31,10 @@
 		{
 			"path": "pages/password/password",
 			"style": {}
+		},
+		{
+			"path": "pages/weixin/weixin",
+			"style": {}
 		}
 	],
 	"globalStyle": {
