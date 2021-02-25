@@ -23,15 +23,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: build h5
-        run: |
-          npm install
-          npm run build:h5
+#       - name: build h5
+#         run: |
+#           npm install
+#           npm run build:h5
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          TOKEN: ${{ secrets.PAT }}
+          ACCESS_TOKEN: ${{ secrets.PAT }}
           REPOSITORY_NAME: mikexfreeze/wealth-freedom-page
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist/build/h5 # The folder the action should deploy.
