@@ -32,7 +32,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           token: ${{ secrets.PAT }}
-          repositoryName: mikexfreeze/wealth-freedom-page
+          repository-name: mikexfreeze/wealth-freedom-page
           branch: gh-pages # The branch the action should deploy to.
           folder: src # The folder the action should deploy.
           clean: true 
